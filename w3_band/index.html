@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
     <title>The Band</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/favi-icon/favi-band.jpg">
@@ -21,7 +22,7 @@
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                         <i class="nav-arrow-down ti-angle-down"></i>
                     </a>
@@ -37,6 +38,9 @@
             <!-- Start search -->
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
+            </div>
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
             </div>
             <!-- End search -->
 
@@ -225,6 +229,38 @@
         modalContainer.addEventListener('click', function(event){
             event.stopPropagation()
         })
+
+        // Code js nhảy chuyển menu từ PC -> Moblie
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = document.clientHeight;
+        // console.log(header.clientHeight);
+
+        // đóng/mở mobile menu
+        mobileMenu.onclick = function () {
+            // Lấy chiều cao của menu
+            
+            var isClose = header.clientHeight === 46;//headerHeight; //46; có thể xảy ra lỗi DOM của headerHeight
+
+            if(isClose){
+                header.style.height = 'auto';
+            }else{
+                // ẩn menu
+                header.style.height = null;
+            }
+
+        }
+        // Tự động đóng khi chọn menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        // console.log(menuItems);
+
+        for(var i = 0; i < menuItems.length; i++){
+            var menuItem = menuItems[i];
+            menuItem.onclick = function(){
+                header.style.height = null;
+            }
+        }
+
     </script>
 </body>
 </html>

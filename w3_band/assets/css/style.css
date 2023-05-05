@@ -69,9 +69,9 @@ Làm việc từ ngoài -> trong, trên -> xuống, tổng quan -> chi tiết
 }
 
 /* Main */
-#main{
+/* #main{
 
-}
+} */
 #header{
     position:fixed;
     top: 0;
@@ -80,6 +80,7 @@ Làm việc từ ngoài -> trong, trên -> xuống, tổng quan -> chi tiết
     height: 46px;
     background-color: black;
     z-index: 1;
+    overflow: hidden;
 }
 
 #nav{
@@ -152,6 +153,7 @@ Làm việc từ ngoài -> trong, trên -> xuống, tổng quan -> chi tiết
     font-size: 13px;
 }
 
+#header .mobile-menu-btn, 
 #header .search-btn{
     float: right;
     line-height: 46px;
@@ -163,6 +165,15 @@ Làm việc từ ngoài -> trong, trên -> xuống, tổng quan -> chi tiết
     background-color: #f44336;
 }
 
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .menu-icon, 
 #header .search-icon{
     color: #fff;
 }
@@ -192,15 +203,18 @@ Làm việc từ ngoài -> trong, trên -> xuống, tổng quan -> chi tiết
     padding: 32 16px;
 }
 
-#content{
+/* #content{
 
-}
+} */
 
 #content .content-section{
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 64px 0;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading {
@@ -502,4 +516,21 @@ Làm việc từ ngoài -> trong, trên -> xuống, tổng quan -> chi tiết
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* -- Responsive -- */
+
+/* Break point */
+
+/* PC */
+@media (min-width: 1024px){
+    /* css */
+}
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1024px){
+    /* css */
+}
+/* Mobile */
+@media (min-width: 740px){
+    /* css */
 }
