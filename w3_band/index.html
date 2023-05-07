@@ -260,9 +260,9 @@
             menuItem.onclick = function (event) {
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
                 if(isParentMenu){
+                    // Huỷ bỏ event nếu nó có thể huỷ mà không dừng sự lan rộng(propagation) của event tới phần khác
                     event.preventDefault();
                 }else{
-                    // Huỷ bỏ event nếu nó có thể huỷ mà không dừng sự lan rộng(propagation) của event tới phần khác
                     header.style.height = null;
                 }
             }
